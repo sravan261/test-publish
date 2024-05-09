@@ -2,7 +2,7 @@
     "name": "test-pkg",
     "version": "0.0.1",
     "description": "",
-    "main": "./dist/player.js",
+    "main": "./dist/test.js",
     "scripts": {
         "build": "esbuild src/test.ts --target=es2019 --bundle --minify --outfile=dist/test.js"
     },
