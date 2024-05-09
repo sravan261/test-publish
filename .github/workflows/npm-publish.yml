@@ -42,3 +42,10 @@ jobs:
             NPM_AUTH_SECRET: ${{ secrets.NPM_AUTH_SECRET }}
   
 
+  check-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check npm token
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
