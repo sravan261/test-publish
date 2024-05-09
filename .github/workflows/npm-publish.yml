@@ -39,6 +39,6 @@ jobs:
       - name: Publish to npm
         uses: JS-DevTools/npm-publish@v3
         env:
-            npmAuthToken: ${{ secrets.NPM_AUTH_SECRET }}
+            NPM_AUTH_SECRET: ${{ secrets.NPM_AUTH_SECRET }}
   
 
