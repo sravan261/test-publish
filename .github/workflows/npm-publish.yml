@@ -35,6 +35,10 @@ jobs:
         with:
           name: web-uploads
           path: ${{ github.workspace }}/${{ env.BUILD_ARTIFACTS_FOLDER }}
-      
 
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v3
+        env:
+            npmAuthToken: ${{ secrets.NPM_AUTH_SECRET }}
+  
 
