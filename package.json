@@ -1,15 +1,16 @@
 {
     "name": "test-pkg",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "",
     "main": "./dist/test.js",
     "scripts": {
-      "build": "esbuild src/test.ts --target=es2019 --bundle --minify --outfile=./dist/test.js"
+      "build": "esbuild src/test.ts --bundle --minify --target=es2019 --outfile=dist/test.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "esbuild": "^0.20.2"
+      "esbuild": "^0.21.1"
     }
   }
+  
