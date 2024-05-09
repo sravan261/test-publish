@@ -1,0 +1,15 @@
+{
+    "name": "test-pkg",
+    "version": "0.0.1",
+    "description": "",
+    "main": "./dist/player.js",
+    "scripts": {
+      "build": "esbuild src/test.ts --target=es2019 --bundle --minify --outfile=./dist/test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "esbuild": "^0.20.2"
+    }
+  }
