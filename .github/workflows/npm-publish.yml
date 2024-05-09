@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main  # adjust the branch as needed
+  pull_request:
+    branches:
+      - main  # adjust the branch as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # adjust the version as needed
+
+    - name: Install dependencies and build
+      run: |
+        npm install
+        npm run build
+
+    - name: Copy artifacts
+      run: |
+        mkdir -p ${{ github.workspace }}/dist
+        cp -r dist/*.js ${{ github.workspace }}/dist
+      # The artifacts are copied to the ${{ github.workspace }}/dist directory
+      # which is available for subsequent steps and can be used to deploy or save artifacts
