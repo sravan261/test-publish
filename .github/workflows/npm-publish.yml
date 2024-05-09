@@ -30,21 +30,12 @@ jobs:
       - name: Copy package.json to artifacts directory
         run: cp package.json ${{ github.workspace }}/dist/package.json
 
-      - name: Publish artifact
+      - name: Publish artifacts
         uses: actions/upload-artifact@v2
         with:
           name: web-uploads
           path: ${{ github.workspace }}/${{ env.BUILD_ARTIFACTS_FOLDER }}
 
-      - name: Publish to npm
-        uses: JS-DevTools/npm-publish@v3
-        env:
-            NPM_AUTH_SECRET: ${{ secrets.NPM_AUTH_SECRET }}
-  
-
-  check-token:
-    runs-on: ubuntu-latest
-    steps:
       - name: Check npm token
         run: npm whoami
         env:
