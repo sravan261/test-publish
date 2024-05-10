@@ -1,5 +1,5 @@
 {
-    "name": "test-pkg",
+    "name": "my-mock-package1",
     "version": "0.0.1",
     "description": "",
     "main": "./dist/test.js",
