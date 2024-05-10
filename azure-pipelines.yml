@@ -31,3 +31,9 @@ steps:
     contents: 'package.json'
     targetFolder: $(Build.ArtifactStagingDirectory)
   displayName: 'Copy archives to artifacts staging directory'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    path: $(Build.ArtifactStagingDirectory)
+    artifact: fp-player
+  displayName: 'Publish artifacts
