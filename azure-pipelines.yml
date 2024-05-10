@@ -35,5 +35,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     path: $(Build.ArtifactStagingDirectory)
-    artifact: fp-player
-  displayName: 'Publish artifacts
+    artifact: test package
+  displayName: 'Publish artifacts'
