@@ -11,23 +11,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup NodeJS Version
-        uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          node-version: 20
-
-      - name: Install Dependencies
-        run: npm install
-    
-      - name: Install Dependencies
-        run: npm run build
-
-      - name: Publish NPM Package
-        run: npm publish dist
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies and build 🔧
+        run: npm ci && npm run build
+      - name: Publish package on NPM 
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NNPM_AUTH_SECRET }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
