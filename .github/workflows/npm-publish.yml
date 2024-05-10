@@ -27,16 +27,7 @@ jobs:
       - name: Install Dependencies
         run: npm run build
 
-      - name: Copy package.json to artifacts directory
-        run: cp package.json ${{ github.workspace }}/dist/package.json
-
-      - name: Publish artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: web-uploads
-          path: ${{ github.workspace }}/${{ env.BUILD_ARTIFACTS_FOLDER }}
-
-      - name: Check npm token
-        run: npm whoami
+      - name: Publish NPM Package
+        run: npm publish dist
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NNPM_AUTH_SECRET }}
